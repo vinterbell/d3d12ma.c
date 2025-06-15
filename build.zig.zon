@@ -11,6 +11,7 @@
     },
     .paths = .{
         "code/d3d12ma",
+        "src",
         "build.zig",
         "build.zig.zon",
     },
