@@ -10103,8 +10103,10 @@ d3d12ma_no_name_mangle D3D12MA_POOL_DESC
 D3D12MAPool_GetDesc(void *pSelf)
 {
  D3D12MA::Pool *self = reinterpret_cast<D3D12MA::Pool *>(pSelf);
- //NOTE(mwalky): stinky cheese, yikes
- return *reinterpret_cast<D3D12MA_POOL_DESC *>(&self->GetDesc());
+ D3D12MA::POOL_DESC desc = self->GetDesc();
+ D3D12MA::POOL_DESC *desc_ptr = &desc;
+ D3D12MA_POOL_DESC *desc_ptr_cast = reinterpret_cast<D3D12MA_POOL_DESC *>(desc_ptr);
+ return *desc_ptr_cast;
 }
 
 d3d12ma_no_name_mangle void

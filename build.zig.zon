@@ -1,0 +1,17 @@
+.{
+    .name = .d3d12mac,
+    .version = "2.1.0",
+    .fingerprint = 0x155c10c0819878bc,
+    .minimum_zig_version = "0.15.0-dev.666+c04be630d",
+    .dependencies = .{
+        .zwindows = .{
+            .url = "git+https://github.com/vinterbell/zwindows.git#f733815f0de79bb67f10308d77e9aaab0bd150d1",
+            .hash = "zwindows-0.2.0-dev-xMZ1u-pgDABXD17b8kzCHINI8sYG3-8Y9iOcZNwHTxQa",
+        },
+    },
+    .paths = .{
+        "code/d3d12ma",
+        "build.zig",
+        "build.zig.zon",
+    },
+}
