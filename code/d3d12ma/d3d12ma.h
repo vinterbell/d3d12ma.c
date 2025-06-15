@@ -3133,6 +3133,7 @@ d3d12ma_no_name_mangle void D3D12MAAllocation_SetPrivateData(void *pSelf, void *
 d3d12ma_no_name_mangle void *D3D12MAAllocation_GetPrivateData(void *pSelf);
 d3d12ma_no_name_mangle void D3D12MAAllocation_SetName(void *pSelf, LPCWSTR Name);
 d3d12ma_no_name_mangle LPCWSTR D3D12MAAllocation_GetName(void *pSelf);
+d3d12ma_no_name_mangle void D3D12MAAllocation_Release(void *pSelf);
 
 ////////////////////////////////
 //~ mwalky: Defragmentation Context Top-Level API
@@ -3207,5 +3208,6 @@ d3d12ma_no_name_mangle void D3D12MAVirtualBlock_FreeStatsString(void *pSelf, WCH
 
 d3d12ma_no_name_mangle HRESULT D3D12MACreateAllocator(const D3D12MA_ALLOCATOR_DESC *pDesc, D3D12MAAllocator **ppAllocator);
 d3d12ma_no_name_mangle HRESULT D3D12MACreateVirtualBlock(const D3D12MA_VIRTUAL_BLOCK_DESC *pDesc, D3D12MAVirtualBlock **ppVirtualBlock);
+d3d12ma_no_name_mangle void D3D12MAAllocator_Release(void *pSelf);
 
 #endif // D3D12MA_H

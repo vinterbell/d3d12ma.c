@@ -10069,6 +10069,13 @@ D3D12MAAllocation_GetName(void *pSelf)
  return self->GetName();
 }
 
+d3d12ma_no_name_mangle void
+D3D12MAAllocation_Release(void *pSelf)
+{
+ D3D12MA::Allocation *self = reinterpret_cast<D3D12MA::Allocation *>(pSelf);
+ self->Release();
+}
+
 ////////////////////////////////
 //~ mwalky: Defragmentation Context Top-Level API
 
@@ -10432,4 +10439,11 @@ D3D12MACreateVirtualBlock(const D3D12MA_VIRTUAL_BLOCK_DESC* pDesc, D3D12MAVirtua
  D3D12MA::VirtualBlock **virtual_block = reinterpret_cast<D3D12MA::VirtualBlock **>(ppVirtualBlock);
  error = D3D12MA::CreateVirtualBlock(desc, virtual_block);
  return error;
+}
+
+d3d12ma_no_name_mangle void
+D3D12MAAllocator_Release(void *pSelf)
+{
+ D3D12MA::Allocator *self = reinterpret_cast<D3D12MA::Allocator *>(pSelf);
+ self->Release();
 }
